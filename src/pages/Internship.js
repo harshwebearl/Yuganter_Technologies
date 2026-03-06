@@ -6,71 +6,64 @@ import InternshipModal from "../components/InternshipModal";
 import { motion } from "framer-motion";
 
 export default function Internship() {
+
   const [selectedInternship, setSelectedInternship] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    document.title = "Internship Programs Ahmedabad - YugAntar Technologies";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Join internship programs in Ahmedabad for Web Development, Data Science, and more. Gain practical experience with expert mentorship at YugAntar Technologies."
-      );
-    }
+    document.title = "Internship Programs - YugAntar Technologies";
   }, []);
 
   const internshipPrograms = [
     {
       title: "Web Development Internship",
       duration: "3–6 Months",
-      icon: "🌐",
       skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
       description:
-        "Build modern web applications with real-world projects and mentorship.",
+        "Build modern websites and web applications while working on real projects with our development team.",
     },
     {
       title: "Python Development Internship",
       duration: "3–6 Months",
-      icon: "🐍",
       skills: ["Python", "Flask", "Django", "APIs", "Databases"],
-      description: "Learn backend development by building scalable Python applications.",
+      description:
+        "Learn backend development and build scalable applications using modern Python frameworks.",
     },
     {
       title: "Mobile App Development Internship",
       duration: "3–6 Months",
-      icon: "📱",
       skills: ["Flutter", "React Native", "Firebase"],
-      description: "Design and develop cross-platform mobile apps from scratch.",
+      description:
+        "Create cross-platform mobile applications and understand the full mobile development lifecycle.",
     },
     {
       title: "UI / UX Design Internship",
       duration: "2–4 Months",
-      icon: "🎨",
       skills: ["Figma", "Wireframing", "Prototyping"],
-      description: "Create user-centered designs and interactive prototypes.",
+      description:
+        "Design modern user interfaces and learn how to create intuitive digital experiences.",
     },
     {
       title: "Data Science Internship",
       duration: "4–6 Months",
-      icon: "📊",
       skills: ["Python", "ML", "Data Analysis", "Visualization"],
-      description: "Work with data, build ML models, and gain analytical experience.",
+      description:
+        "Work with real datasets and learn machine learning, data analysis, and visualization techniques.",
     },
     {
       title: "Java Development Internship",
       duration: "3–6 Months",
-      icon: "☕",
       skills: ["Java", "Spring Boot", "REST APIs"],
-      description: "Develop enterprise-grade applications using Java technologies.",
+      description:
+        "Develop enterprise-grade applications using modern Java frameworks and backend architecture.",
     },
   ];
 
   const benefits = [
-    { icon: "💼", title: "Live Projects", desc: "Hands-on experience with real projects" },
-    { icon: "👨‍🏫", title: "Expert Mentors", desc: "Learn from industry professionals" },
-    { icon: "📜", title: "Certification", desc: "Internship completion certificate" },
-    { icon: "🚀", title: "Career Support", desc: "Placement & interview guidance" },
+    { icon: "💼", title: "Live Projects", desc: "Work on real industry projects." },
+    { icon: "👨‍🏫", title: "Expert Mentors", desc: "Guidance from experienced developers." },
+    { icon: "📜", title: "Certification", desc: "Internship completion certificate." },
+    { icon: "🚀", title: "Career Support", desc: "Interview preparation & career guidance." },
   ];
 
   const openModal = (program) => {
@@ -79,130 +72,155 @@ export default function Internship() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="bg-gray-900 text-white">
+
       <Navbar />
 
-      <PageHeader
-        title="Internship Programs"
-        subtitle="Real-World Experience • Expert Mentorship • Career Growth"
-      />
-
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-secondary-600 to-primary-600 text-white py-24">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-6xl font-extrabold mb-6"
-          >
-            Kickstart Your Career with Industry Internships
-          </motion.h1>
-          <p className="text-lg md:text-2xl opacity-90 mb-10">
-            Learn by doing. Work on real projects. Get job-ready.
-          </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            <a
-              href="#programs"
-              className="px-8 py-4 bg-white text-secondary-600 font-semibold rounded-2xl shadow-lg hover:scale-105 transition"
-            >
-              Explore Programs
-            </a>
-            <a
-              href="tel:+916355582605"
-              className="px-8 py-4 border-2 border-white rounded-2xl hover:bg-white/10 transition"
-            >
-              Call: +91 6355582605
-            </a>
-          </div>
-        </div>
+
+      <section className="py-24 text-center max-w-7xl mx-auto px-6">
+
+        <h1 className="text-3xl lg:text-5xl font-bold leading-snug mb-4 text-white">
+          Internship Programs
+        </h1>
+
+        <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
+          Start your career with hands-on industry internships.  
+          Gain practical experience, build real projects, and learn from expert mentors.
+        </p>
+
+        <a
+          href="#programs"
+          className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
+        >
+          Explore Programs
+        </a>
+
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+
+      <section className="py-16">
+
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">Why Choose Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <h2 className="text-4xl font-bold text-center mb-12">
+            Why Choose Our Internship?
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
             {benefits.map((b, i) => (
+
               <motion.div
                 key={i}
                 whileHover={{ y: -8 }}
-                className="bg-gradient-to-br from-secondary-50 to-primary-50 rounded-3xl p-8 text-center shadow-md hover:shadow-xl transition"
+                className="bg-gray-800 p-8 rounded-3xl text-center shadow-lg hover:shadow-2xl transition"
               >
+
                 <div className="text-5xl mb-4">{b.icon}</div>
+
                 <h3 className="text-xl font-bold mb-2">{b.title}</h3>
-                <p className="text-gray-600">{b.desc}</p>
+
+                <p className="text-gray-400">{b.desc}</p>
+
               </motion.div>
+
             ))}
+
           </div>
+
         </div>
+
       </section>
 
-      {/* Programs Section */}
-      <section id="programs" className="py-20 bg-gray-50">
+      {/* Programs */}
+
+      <section id="programs" className="py-16">
+
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
-            Explore Our Internship Programs
+
+          <h2 className="text-4xl font-bold text-center mb-14">
+            Explore Internship Programs
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
             {internshipPrograms.map((p, i) => (
+
               <motion.div
                 key={i}
-                whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="relative bg-white rounded-3xl p-8 shadow-xl border border-gray-200 hover:border-transparent hover:shadow-2xl transition duration-300"
+                whileHover={{ scale: 1.05 }}
+                className="bg-gray-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition"
               >
-                {/* Top Icon Badge */}
-                <div className="absolute -top-6 left-1/2 transform -translate-x-1/2">
-                  <div className="text-6xl">{p.icon}</div>
+
+                <div className="text-5xl mb-4">{p.icon}</div>
+
+                <h3 className="text-xl font-bold mb-2">
+                  {p.title}
+                </h3>
+
+                <span className="text-xs px-3 py-1 rounded-full bg-indigo-500">
+                  {p.duration}
+                </span>
+
+                <p className="text-gray-400 mt-4 mb-5">
+                  {p.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+
+                  {p.skills.map((s, idx) => (
+
+                    <span
+                      key={idx}
+                      className="text-xs px-3 py-1 bg-gray-700 rounded-full"
+                    >
+                      {s}
+                    </span>
+
+                  ))}
+
                 </div>
 
-                <div className="mt-8 text-center">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2">{p.title}</h3>
-                  <span className="inline-block text-sm px-4 py-1 rounded-full bg-gradient-to-r from-secondary-100 to-primary-100 text-secondary-700 font-medium mb-4">
-                    {p.duration}
-                  </span>
-                  <p className="text-gray-600 mb-5">{p.description}</p>
+                <button
+                  onClick={() => openModal(p)}
+                  className="w-full bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
+                >
+                  Apply Now
+                </button>
 
-                  {/* Skills Badges */}
-                  <div className="flex flex-wrap justify-center gap-2 mb-6">
-                    {p.skills.map((s, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 rounded-full text-sm bg-gradient-to-r from-secondary-100 to-primary-100 text-secondary-700 font-medium"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Apply Button */}
-                  <button
-                    onClick={() => openModal(p)}
-                    className="w-full py-3 rounded-xl bg-gradient-to-r from-secondary-500 to-primary-500 text-white font-semibold hover:scale-105 hover:shadow-lg transition"
-                  >
-                    Apply Now
-                  </button>
-                </div>
               </motion.div>
+
             ))}
+
           </div>
+
         </div>
+
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-secondary-600 to-primary-600 text-white text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Apply?</h2>
-        <p className="text-lg mb-8">Start your professional journey with us today</p>
+      {/* CTA */}
+
+      <section className="py-20 text-center">
+
+        <h2 className="text-4xl font-bold mb-4">
+          Ready to Start Your Career?
+        </h2>
+
+        <p className="text-gray-300 mb-8">
+          Apply now and gain real-world experience with YugAntar Technologies.
+        </p>
+
         <a
           href="#programs"
-          className="inline-block px-10 py-4 bg-white text-secondary-600 rounded-2xl font-semibold hover:scale-105 transition"
+          className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
         >
           Apply for Internship
         </a>
+
       </section>
 
-      {/* Internship Modal */}
       <InternshipModal
         internship={selectedInternship}
         isOpen={isModalOpen}
@@ -210,6 +228,7 @@ export default function Internship() {
       />
 
       <Footer />
+
     </div>
   );
 }

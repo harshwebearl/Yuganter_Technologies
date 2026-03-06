@@ -1,130 +1,210 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import PageHeader from "../components/PageHeader";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import CourseCard from "../components/CourseCard";
 import EnrollmentModal from "../components/EnrollmentModal";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Courses() {
+
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [ref, isVisible] = useScrollAnimation({ threshold: 0.12 });
 
   useEffect(() => {
-    document.title = 'IT Courses Ahmedabad - YugAntar Technologies';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Explore IT courses in Ahmedabad including Full Stack Development, Python, Data Science. Best IT training institute in Navrangpura with 100% placement assistance.');
-    }
+  window.scrollTo(0, 0);
+}, []);
+
+  useEffect(() => {
+    document.title = "IT Courses Ahmedabad - YugAntar Technologies";
   }, []);
 
   const courses = [
-    {
-      title: "Full Stack Development (MERN)",
-      description: "Master MongoDB, Express, React, and Node.js to build modern web applications from scratch.",
-      imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=96&h=96&fit=crop&crop=center",
-      duration: "6 Months",
-      popular: true,
-      features: [
-        "React.js & Redux",
-        "Node.js & Express",
-        "MongoDB Database",
-        "RESTful APIs",
-        "Authentication & Authorization",
-        "Deployment & DevOps"
-      ]
-    },
-    {
-      title: "Python Development",
-      description: "Learn Python programming, Django framework, and build scalable web applications.",
-      imageUrl: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=96&h=96&fit=crop&crop=center",
-      duration: "5 Months",
-      popular: false,
-      features: [
-        "Python Fundamentals",
-        "Django Framework",
-        "Database Management",
-        "API Development",
-        "Web Scraping",
-        "Data Analysis"
-      ]
-    },
-    {
-      title: "Java Full Stack",
-      description: "Comprehensive Java training with Spring Boot, Hibernate, and modern Java technologies.",
-      imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=96&h=96&fit=crop&crop=center",
-      duration: "6 Months",
-      popular: false,
-      features: [
-        "Core Java & Advanced Java",
-        "Spring Boot Framework",
-        "Hibernate ORM",
-        "Microservices",
-        "JSP & Servlets",
-        "Enterprise Applications"
-      ]
-    },
-    {
-      title: "UI/UX Design",
-      description: "Master design principles, tools like Figma, and create stunning user interfaces.",
-      imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=96&h=96&fit=crop&crop=center",
-      duration: "4 Months",
-      popular: false,
-      features: [
-        "Design Principles",
-        "Figma & Adobe XD",
-        "Prototyping",
-        "User Research",
-        "Wireframing",
-        "Portfolio Development"
-      ]
-    },
-    {
-      title: "Data Science & AI/ML",
-      description: "Learn data analysis, machine learning, and artificial intelligence with Python.",
-      imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=96&h=96&fit=crop&crop=center",
-      duration: "7 Months",
-      popular: true,
-      features: [
-        "Python for Data Science",
-        "Machine Learning",
-        "Deep Learning",
-        "Data Visualization",
-        "NLP & Computer Vision",
-        "Real-world Projects"
-      ]
-    },
-    {
-      title: "Mobile App Development",
-      description: "Build native and cross-platform mobile applications using React Native and Flutter.",
-      imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=96&h=96&fit=crop&crop=center",
-      duration: "5 Months",
-      popular: false,
-      features: [
-        "React Native",
-        "Flutter Development",
-        "App Architecture",
-        "State Management",
-        "API Integration",
-        "App Store Deployment"
-      ]
-    },
-    {
-      title: "Digital Marketing",
-      description: "Master digital marketing strategies, SEO, social media marketing, and analytics to grow businesses online.",
-      imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=96&h=96&fit=crop&crop=center",
-      duration: "4 Months",
-      popular: true,
-      features: [
-        "SEO & SEM",
-        "Social Media Marketing",
-        "Content Marketing",
-        "Google Analytics",
-        "Email Marketing",
-        "PPC Advertising"
-      ]
-    }
-  ];
+  {
+    title: "Full Stack Development (MERN)",
+    description: "Master MongoDB, Express, React, and Node.js to build modern web applications.",
+    imageUrl: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=600&auto=format&fit=crop",
+    duration: "6 Months",
+    popular: true,
+    features: [
+      "React.js & Redux",
+      "Node.js & Express",
+      "MongoDB Database",
+      "RESTful APIs",
+      "Authentication",
+      "Deployment"
+    ]
+  },
+  {
+  title: "Python Development",
+  description: "Learn Python programming and Django framework to build scalable web apps.",
+  imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop",
+  duration: "5 Months",
+  popular: false,
+  features: [
+    "Python Fundamentals",
+    "Django Framework",
+    "Database Management",
+    "API Development",
+    "Web Scraping",
+    "Data Analysis"
+  ]
+},
+  {
+    title: "Java Full Stack",
+    description: "Comprehensive Java training with Spring Boot and enterprise technologies.",
+    imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop",
+    duration: "6 Months",
+    popular: false,
+    features: [
+      "Core Java",
+      "Spring Boot",
+      "Hibernate ORM",
+      "Microservices",
+      "JSP & Servlets",
+      "Enterprise Applications"
+    ]
+  },
+  {
+    title: "UI/UX Design",
+    description: "Learn design principles and tools like Figma to create amazing user interfaces.",
+    imageUrl: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&auto=format&fit=crop",
+    duration: "4 Months",
+    popular: false,
+    features: [
+      "Design Principles",
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "User Research",
+      "Portfolio"
+    ]
+  },
+  {
+    title: "Data Science & AI/ML",
+    description: "Learn data analysis, machine learning and AI with Python.",
+    imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&auto=format&fit=crop",
+    duration: "7 Months",
+    popular: true,
+    features: [
+      "Python for Data Science",
+      "Machine Learning",
+      "Deep Learning",
+      "Data Visualization",
+      "NLP",
+      "Projects"
+    ]
+  },
+  {
+    title: "Mobile App Development",
+    description: "Build mobile apps using React Native and Flutter.",
+    imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&auto=format&fit=crop",
+    duration: "5 Months",
+    popular: false,
+    features: [
+      "React Native",
+      "Flutter",
+      "API Integration",
+      "State Management",
+      "App Architecture",
+      "Deployment"
+    ]
+  }
+];
+
+  // const courses = [
+  //   {
+  //     title: "Full Stack Development (MERN)",
+  //     description: "Master MongoDB, Express, React, and Node.js to build modern web applications.",
+  //     imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=96&h=96&fit=crop&crop=center",
+  //     duration: "6 Months",
+  //     popular: true,
+  //     features: [
+  //       "React.js & Redux",
+  //       "Node.js & Express",
+  //       "MongoDB Database",
+  //       "RESTful APIs",
+  //       "Authentication",
+  //       "Deployment"
+  //     ]
+  //   },
+  //   {
+  //     title: "Python Development",
+  //     description: "Learn Python programming and Django framework to build scalable web apps.",
+  //     imageUrl: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=96&h=96&fit=crop&crop=center",
+  //     duration: "5 Months",
+  //     popular: false,
+  //     features: [
+  //       "Python Fundamentals",
+  //       "Django Framework",
+  //       "Database Management",
+  //       "API Development",
+  //       "Web Scraping",
+  //       "Data Analysis"
+  //     ]
+  //   },
+  //   {
+  //     title: "Java Full Stack",
+  //     description: "Comprehensive Java training with Spring Boot and enterprise technologies.",
+  //     imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=96&h=96&fit=crop&crop=center",
+  //     duration: "6 Months",
+  //     popular: false,
+  //     features: [
+  //       "Core Java",
+  //       "Spring Boot",
+  //       "Hibernate ORM",
+  //       "Microservices",
+  //       "JSP & Servlets",
+  //       "Enterprise Applications"
+  //     ]
+  //   },
+  //   {
+  //     title: "UI/UX Design",
+  //     description: "Learn design principles and tools like Figma to create amazing user interfaces.",
+  //     imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=96&h=96&fit=crop&crop=center",
+  //     duration: "4 Months",
+  //     popular: false,
+  //     features: [
+  //       "Design Principles",
+  //       "Figma",
+  //       "Wireframing",
+  //       "Prototyping",
+  //       "User Research",
+  //       "Portfolio"
+  //     ]
+  //   },
+  //   {
+  //     title: "Data Science & AI/ML",
+  //     description: "Learn data analysis, machine learning and AI with Python.",
+  //     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=96&h=96&fit=crop&crop=center",
+  //     duration: "7 Months",
+  //     popular: true,
+  //     features: [
+  //       "Python for Data Science",
+  //       "Machine Learning",
+  //       "Deep Learning",
+  //       "Data Visualization",
+  //       "NLP",
+  //       "Projects"
+  //     ]
+  //   },
+  //   {
+  //     title: "Mobile App Development",
+  //     description: "Build mobile apps using React Native and Flutter.",
+  //     imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=96&h=96&fit=crop&crop=center",
+  //     duration: "5 Months",
+  //     popular: false,
+  //     features: [
+  //       "React Native",
+  //       "Flutter",
+  //       "API Integration",
+  //       "State Management",
+  //       "App Architecture",
+  //       "Deployment"
+  //     ]
+  //   }
+  // ];
 
   const handleEnroll = (course) => {
     setSelectedCourse(course);
@@ -136,73 +216,133 @@ export default function Courses() {
     setSelectedCourse(null);
   };
 
-  const handleEnrollmentSuccess = () => {
-    console.log("Enrollment successful for:", selectedCourse?.title);
-  };
-
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="bg-gray-900 text-white min-h-screen">
+
       <Navbar />
-      
-      <PageHeader 
-        title="Our Courses" 
-        subtitle="Choose Your Career Path"
-      />
-      
-      <main className="flex-grow py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
 
-          {/* Intro Section */}
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-4">
-              Transform Your Career with Industry-Ready Skills
-            </h2>
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Our comprehensive courses are designed by industry experts to help you master in-demand technologies and land your dream job.
+      {/* Hero Section */}
+      <section className="bg-gray-900 mt-16">
+        <div className="max-w-7xl mx-auto px-6 py-16 lg:py-20 flex flex-col lg:flex-row items-center gap-10">
+
+          <div className="lg:w-1/2">
+            <h1 className="text-3xl lg:text-5xl font-bold mb-4">
+              Our IT Courses
+            </h1>
+
+            <p className="text-lg text-gray-300 mb-6">
+              Learn industry-ready technologies and start your career in IT with expert training and live projects.
             </p>
-          </div>
 
-          {/* Courses Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {courses.map((course, index) => (
-              <CourseCard key={index} course={course} onEnroll={handleEnroll} />
-            ))}
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4">
 
-          {/* Enrollment Modal */}
-          <EnrollmentModal
-            course={selectedCourse}
-            isOpen={isModalOpen}
-            onClose={handleCloseModal}
-            onSuccess={handleEnrollmentSuccess}
-          />
-
-          {/* Call to Action */}
-          <div className="mt-24 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-2xl p-12 text-center text-white shadow-2xl">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Ready to Start Your Journey?</h3>
-            <p className="text-base md:text-lg lg:text-xl mb-8 opacity-90">
-              Join thousands of students who have transformed their careers with YugAntar Technologies
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="px-6 py-3 bg-white text-secondary-600 font-semibold text-base rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 text-center"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
               >
                 Book Free Demo Class
               </Link>
+
               <a
                 href="tel:+916355582605"
-                className="px-6 py-3 border-2 border-white text-white font-semibold text-base rounded-xl hover:bg-white/10 transition-all duration-300 text-center"
+                className="px-6 py-3 border-2 border-indigo-500 text-indigo-500 rounded-xl font-semibold hover:bg-indigo-700 hover:text-white transition"
               >
-                Call Us: +91 6355582605
+                Call: +91 6355582605
               </a>
+
             </div>
           </div>
 
+          <div className="lg:w-1/2 flex justify-center">
+            <img
+              src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg"
+              alt="IT Courses"
+              className="rounded-3xl shadow-2xl w-full max-w-md hover:scale-105 transition duration-500"
+            />
+          </div>
+
         </div>
-      </main>
+      </section>
+
+      {/* Courses Section */}
+      <section className="max-w-7xl mx-auto px-6 py-16">
+
+        <div className="text-center mb-12">
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+            Explore Our Courses
+          </h2>
+
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Choose from our industry-focused IT courses designed to help you build real-world skills and start a successful tech career.
+          </p>
+
+        </div>
+
+        <div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+
+          {courses.map((course, index) => (
+            <div
+              key={index}
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(40px)",
+                transition: "all 0.6s ease",
+                transitionDelay: `${index * 120}ms`,
+              }}
+              className="hover:scale-[1.03] transition duration-300"
+            >
+              <CourseCard course={course} onEnroll={handleEnroll} />
+            </div>
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* CTA Section */}
+      <section className="mt-16 bg-gray-800 rounded-3xl p-12 text-center shadow-2xl mx-6 lg:mx-auto max-w-7xl">
+
+        <h3 className="text-3xl font-bold mb-4">
+          Ready to Start Your IT Career?
+        </h3>
+
+        <p className="text-lg text-gray-300 mb-8">
+          Join thousands of students who have built successful careers with YugAntar Technologies.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          <Link
+            to="/contact"
+            className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-3 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
+          >
+            Book Free Demo Class
+          </Link>
+
+          <a
+            href="tel:+916355582605"
+            className="px-6 py-3 border-2 border-indigo-500 text-indigo-500 rounded-xl font-semibold hover:bg-indigo-700 hover:text-white transition"
+          >
+            Call: +91 6355582605
+          </a>
+
+        </div>
+
+      </section>
+
+      {/* Modal */}
+      <EnrollmentModal
+        course={selectedCourse}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
 
       <Footer />
+
     </div>
   );
 }

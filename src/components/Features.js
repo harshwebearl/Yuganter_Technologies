@@ -16,32 +16,38 @@ export default function Features() {
     {
       title: "Industry-Oriented Courses",
       desc: "Master MERN Stack, Python, AI & more with hands-on projects.",
-      icon: <BookOpenIcon className="w-6 h-6" />,
+      icon: <BookOpenIcon className="w-8 h-8" />,
+      color: "from-indigo-500 to-purple-500",
     },
     {
       title: "Expert Trainers",
       desc: "Learn from industry veterans with real-world experience.",
-      icon: <AcademicCapIcon className="w-6 h-6" />,
+      icon: <AcademicCapIcon className="w-8 h-8" />,
+      color: "from-green-400 to-emerald-500",
     },
     {
       title: "Live Project Training",
       desc: "Work on real-world projects to gain professional confidence.",
-      icon: <CodeBracketIcon className="w-6 h-6" />,
+      icon: <CodeBracketIcon className="w-8 h-8" />,
+      color: "from-yellow-400 to-orange-500",
     },
     {
       title: "Placement Assistance",
       desc: "Resume grooming and mock interviews for job success.",
-      icon: <BriefcaseIcon className="w-6 h-6" />,
+      icon: <BriefcaseIcon className="w-8 h-8" />,
+      color: "from-red-400 to-pink-500",
     },
     {
       title: "Internship Support",
       desc: "Kickstart your career with top internship opportunities.",
-      icon: <RocketLaunchIcon className="w-6 h-6" />,
+      icon: <RocketLaunchIcon className="w-8 h-8" />,
+      color: "from-cyan-400 to-blue-500",
     },
     {
       title: "Modern Learning",
       desc: "Practical execution over outdated theory-based learning.",
-      icon: <LightBulbIcon className="w-6 h-6" />,
+      icon: <LightBulbIcon className="w-8 h-8" />,
+      color: "from-purple-400 to-indigo-500",
     },
   ];
 
@@ -49,11 +55,10 @@ export default function Features() {
     <section
       ref={ref}
       id="features"
-      className="relative py-28 bg-gradient-to-br from-dark-900 via-dark-800 to-dark-950 text-white overflow-hidden"
+      className="relative py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-950 text-white overflow-hidden"
     >
-      {/* Subtle corporate texture */}
+      {/* Subtle pattern */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/circuit.png')] opacity-5"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 via-transparent"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
@@ -63,53 +68,49 @@ export default function Features() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-primary-500 font-mono text-sm tracking-widest mb-3 uppercase">
+          <p className="text-indigo-400 font-mono text-sm tracking-widest mb-3 uppercase">
             Excellence in Education
           </p>
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-            Why Choose <span className="text-primary-500">YugAntar Technologies</span>
+            Why Choose <span className="text-indigo-400">YugAntar Technologies</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-gray-400 text-base md:text-lg leading-relaxed">
-            We build professionals, not just programmers. Our training model is
-            focused on industry readiness, practical execution, and career growth.
+            We focus on practical learning, industry-ready skills, and career growth.
           </p>
         </div>
 
-        {/* Clean Corporate Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Feature Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
           {features.map((f, i) => (
             <div
               key={i}
-              className={`group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-500 hover:border-primary-500/40 hover:bg-white/10 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`group relative rounded-2xl p-8 overflow-hidden transition-transform duration-500 hover:-translate-y-2 hover:shadow-2xl`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              {/* Icon */}
-              <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-xl bg-primary-500/10 text-primary-400 group-hover:bg-primary-500 group-hover:text-black transition-all duration-500">
-                {f.icon}
-              </div>
+              {/* Gradient Background */}
+              <div className={`absolute -inset-1 bg-gradient-to-tr ${f.color} opacity-20 rounded-2xl blur-3xl group-hover:opacity-40 transition-all`}></div>
 
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-3 tracking-tight">
-                {f.title}
-              </h3>
+              {/* Card Content */}
+              <div className="relative z-10 flex flex-col h-full">
 
-              {/* Description */}
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                {f.desc}
-              </p>
+                {/* Icon */}
+                <div className="mb-6 flex items-center justify-center w-14 h-14 rounded-xl bg-white/10 text-white group-hover:bg-white/20 group-hover:text-black transition-all duration-500">
+                  {f.icon}
+                </div>
 
-              {/* Divider */}
-              <div className="mt-6 h-[1px] w-full bg-white/10 group-hover:bg-primary-500/40 transition-all"></div>
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-semibold mb-3 tracking-tight">
+                  {f.title}
+                </h3>
 
-              {/* Footer */}
-              <div className="mt-4 flex items-center justify-between text-xs uppercase tracking-wider text-gray-400">
-                <span>Corporate Training</span>
-                <span className="text-primary-500 font-semibold">→</span>
+                {/* Description */}
+                <p className="text-gray-300 text-sm md:text-base leading-relaxed">
+                  {f.desc}
+                </p>
+
               </div>
             </div>
           ))}

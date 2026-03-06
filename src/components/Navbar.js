@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-const logo = '/Yuganter_Technologies.png';
+
+const logo = "/Yuganter_Technologies.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,10 +10,11 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
@@ -23,106 +25,135 @@ export default function Navbar() {
     { name: "Internship", path: "/internship" },
     { name: "Attendance", path: "/attendance" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" }
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <header className={`w-full bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900 fixed top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-xl backdrop-blur-md bg-opacity-95' : 'shadow-lg'
-      }`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 h-20 md:h-20 lg:h-20">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "py-3 bg-dark-900/80 backdrop-blur-xl border-b border-white/10 shadow-xl"
+          : "py-5 bg-transparent"
+      }`}
+    >
+      <div className="max-w-auto mx-auto px-6 md:px-10 flex items-center justify-between">
+
         {/* Logo */}
-        <Link to="/" className="flex items-center group cursor-pointer relative">
-          <div className="px-2 relative flex items-center justify-center">
-            {/* Glow effect background */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-secondary-400 to-primary-400 opacity-0 group-hover:opacity-50 blur-xl transition-all duration-500 scale-150"></div>
-            
-            {/* Logo Image */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="relative flex items-center justify-center">
             <img
               src={logo}
               alt="YugAntar"
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-contain transition-all duration-300 group-hover:scale-110 relative z-10 drop-shadow-lg group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-contain transition-transform duration-300 group-hover:scale-110"
             />
-            
-            {/* Inner glow ring */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-secondary-400/20 to-primary-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            {/* Rotating border effect */}
-            <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-secondary-400/50 transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
           </div>
 
-          <div className="ml-3 relative z-10">
-            <h1 className="text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-secondary-400 to-primary-400 bg-clip-text text-transparent transition-all duration-300 group-hover:from-secondary-300 group-hover:to-primary-300">
-              YugAntar Technologies
-            </h1>
-            <div className="h-1 w-0 group-hover:w-full bg-gradient-to-r from-secondary-400 to-primary-400 transition-all duration-500 mt-1 rounded-full"></div>
+          <div className="flex flex-col leading-tight">
+            <span className="text-lg md:text-xl font-black text-white">
+              YUG<span className="text-secondary-400">ANTAR</span> Technologies
+            </span>
+            <span className="text-[10px] md:text-xs text-gray-400 tracking-widest uppercase">
+              & Training Institute
+            </span>
           </div>
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-8 items-center">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`text-white text-sm md:text-base font-medium relative py-2 transition-colors duration-300 hover:text-secondary-300 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-secondary-400 after:to-primary-400 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300 ${location.pathname === item.path ? 'text-secondary-300 after:w-full' : ''
+        <nav className="hidden lg:flex items-center gap-2 bg-white/5 border border-white/10 px-2 py-1 rounded-full backdrop-blur-md">
+          {navItems.map((item) => {
+            const active = location.pathname === item.path;
+
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`relative px-5 py-2 text-sm font-semibold rounded-full transition-all duration-300 ${
+                  active
+                    ? "text-white bg-gradient-to-r from-secondary-500/20 to-primary-500/20"
+                    : "text-gray-300 hover:text-white"
                 }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+              >
+                {item.name}
+
+                {active && (
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-secondary-400 to-primary-400 rounded-full"></span>
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Join Button (Desktop) */}
-        <div className="hidden md:block">
+        {/* CTA Button */}
+        <div className="hidden lg:block">
           <Link
             to="/contact"
-            className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
+            className="px-6 py-2.5 rounded-full font-semibold text-white bg-secondary-500 hover:bg-secondary-600 transition-all duration-300 shadow-lg shadow-secondary-500/30"
           >
             Join Now
           </Link>
         </div>
 
-        {/* Mobile Hamburger */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
-            aria-label="Toggle menu"
+        {/* Mobile Toggle */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden p-2 text-white bg-white/5 rounded-lg border border-white/10"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
             {isOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
-              </svg>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
-          </button>
-        </div>
+          </svg>
+        </button>
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-        <nav className="bg-gradient-to-b from-dark-900/98 to-dark-800/98 backdrop-blur-md px-5 py-6 flex flex-col gap-4 border-t border-white/10">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`text-white text-base font-medium hover:text-secondary-300 transition-colors duration-200 py-2 border-b border-white/5 hover:border-secondary-400/30 ${location.pathname === item.path ? 'text-secondary-300' : ''
+      <div
+        className={`lg:hidden fixed inset-0 top-[70px] bg-dark-900/95 backdrop-blur-2xl transition-all duration-500 ${
+          isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        }`}
+      >
+        <nav className="flex flex-col items-center justify-center h-full gap-8">
+          {navItems.map((item) => {
+            const active = location.pathname === item.path;
+
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`text-2xl font-bold transition-all ${
+                  active ? "text-secondary-400 scale-110" : "text-white"
                 }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.name}
-            </Link>
-          ))}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
+
           <Link
             to="/contact"
-            className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-6 py-3 rounded-xl font-semibold text-sm md:text-base text-white mt-2 transition-all duration-300 transform hover:scale-105 text-center"
             onClick={() => setIsOpen(false)}
+            className="mt-4 px-10 py-4 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-xl text-lg font-bold text-white"
           >
-            Join Now
+            Get Started
           </Link>
         </nav>
       </div>

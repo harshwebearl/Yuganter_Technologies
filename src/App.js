@@ -27,12 +27,15 @@ import AdminAttendance from './admin/AdminAttendance';
 import AdminStudents from './admin/AdminStudents';
 import FloatingEnrollButton from './components/FloatingEnrollButton';
 import StudentRegistration from './components/StudentRegistration';
+import ScrollToTop from './components/ScrollTop';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-white text-gray-800">
+         <ScrollToTop />
         <Routes>
+         
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/full-stack-mern" element={<FullStackCourse />} />

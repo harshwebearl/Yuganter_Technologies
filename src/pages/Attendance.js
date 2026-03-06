@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Webcam from 'react-webcam';
-import QrScanner from 'qr-scanner';
-import Navbar from '../components/Navbar';
-import { attendanceAPI } from '../services/attendanceAPI';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from "react";
+import Webcam from "react-webcam";
+import QrScanner from "qr-scanner";
+import Navbar from "../components/Navbar";
+import { attendanceAPI } from "../services/attendanceAPI";
+import { Link } from "react-router-dom";
 
 const Attendance = () => {
   const [isScanning, setIsScanning] = useState(false);
@@ -43,16 +43,13 @@ const Attendance = () => {
   };
 
   const markAttendance = async (qrData) => {
-    // Prevent multiple simultaneous submissions
-    if (isProcessing) {
-      return;
-    }
+    if (isProcessing) return;
 
     setIsProcessing(true);
 
-    const parts = qrData.split(':');
-    if (parts[0] !== 'ATTENDANCE') {
-      alert('Invalid QR Code');
+    const parts = qrData.split(":");
+    if (parts[0] !== "ATTENDANCE") {
+      alert("Invalid QR Code");
       stopScanning();
       setIsProcessing(false);
       return;
@@ -67,13 +64,13 @@ const Attendance = () => {
       );
 
       if (alreadyMarked) {
-        alert('Attendance already marked!');
+        alert("Attendance already marked!");
         stopScanning();
         setIsProcessing(false);
         return;
       }
     } catch (error) {
-      alert('Error checking attendance: ' + error.message);
+      alert("Error checking attendance: " + error.message);
       stopScanning();
       setIsProcessing(false);
       return;
@@ -81,15 +78,19 @@ const Attendance = () => {
 
     try {
       await attendanceAPI.create({ studentName, studentId, qrTimestamp });
-      setScannedData({ name: studentName, id: studentId });
+
+      setScannedData({
+        name: studentName,
+        id: studentId
+      });
+
       setAttendanceMarked(true);
       stopScanning();
       setIsProcessing(false);
     } catch (error) {
-      alert('Error marking attendance: ' + error.message);
+      alert("Error marking attendance: " + error.message);
       stopScanning();
       setIsProcessing(false);
-      return;
     }
   };
 
@@ -101,71 +102,88 @@ const Attendance = () => {
     <>
       <Navbar />
 
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-100 px-4 mt-20">
-        <div className="w-full max-w-md bg-white/80 backdrop-blur-lg rounded-2xl shadow-xl p-8">
+      {/* Main Container */}
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 px-4 py-24">
 
-          <h2 className="text-3xl font-bold text-center text-indigo-700">
+        {/* Card */}
+        <div className="w-full max-w-md bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl p-8">
+
+          {/* Heading */}
+          <h2 className="text-3xl font-bold text-center text-white">
             Student Attendance
           </h2>
 
-          <p className="text-center text-gray-600 mt-2 mb-6">
+          <p className="text-center text-gray-400 mt-2 mb-6">
             Scan the instructor’s QR code to mark your attendance
           </p>
 
+          {/* Registration link */}
           <div className="text-center mb-6">
             <Link
               to="/registration"
-              className="text-sm text-indigo-600 hover:underline"
+              className="text-sm text-indigo-400 hover:text-indigo-300 transition"
             >
               New student? Register here
             </Link>
           </div>
 
+          {/* Start Scan Button */}
           {!isScanning && (
             <button
               onClick={startScanning}
-              className="w-full py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+              className="w-full bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
             >
               📷 Start QR Scan
             </button>
           )}
 
+          {/* Scanning Section */}
           {isScanning && (
             <div className="space-y-4">
+
               {!webcamReady && (
-                <p className="text-center text-gray-500">
+                <p className="text-center text-gray-400">
                   Initializing camera...
                 </p>
               )}
 
-              <Webcam
-                ref={webcamRef}
-                audio={false}
-                onUserMedia={onWebcamReady}
-                className={`rounded-xl ${webcamReady ? '' : 'hidden'}`}
-                videoConstraints={{ facingMode: 'environment' }}
-              />
+              <div className="bg-gray-700 p-3 rounded-xl">
+                <Webcam
+                  ref={webcamRef}
+                  audio={false}
+                  onUserMedia={onWebcamReady}
+                  className={`rounded-lg ${webcamReady ? "" : "hidden"}`}
+                  videoConstraints={{ facingMode: "environment" }}
+                />
+              </div>
 
               <button
                 onClick={stopScanning}
-                className="w-full py-3 rounded-lg bg-red-500 text-white font-semibold hover:bg-red-600 transition"
+                className="w-full py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold transition"
               >
                 ❌ Stop Scanning
               </button>
+
             </div>
           )}
 
+          {/* Success Message */}
           {attendanceMarked && scannedData && (
-            <div className="mt-6 bg-green-100 border border-green-400 text-green-700 p-4 rounded-lg text-center">
-              ✅ Attendance marked successfully!
-              <br />
-              <span className="font-semibold">
+            <div className="mt-6 bg-green-900 border border-green-600 text-green-300 p-4 rounded-xl text-center">
+
+              <p className="font-semibold">
+                ✅ Attendance marked successfully!
+              </p>
+
+              <p className="mt-1">
                 {scannedData.name} (ID: {scannedData.id})
-              </span>
+              </p>
+
             </div>
           )}
 
         </div>
+
       </div>
     </>
   );
