@@ -9,10 +9,6 @@ import { CodeBracketIcon, CpuChipIcon, ChartBarIcon, GlobeAltIcon, CheckCircleIc
 export default function PythonCourse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    document.title = 'Python Development Course Ahmedabad - YugAntar Technologies';
-  }, []);
-
   const course = {
     title: "Python Development",
     description: "Learn Python programming, Django framework, and build scalable web applications.",

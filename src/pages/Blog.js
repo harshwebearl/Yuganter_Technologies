@@ -5,14 +5,6 @@ import Footer from "../components/Footer";
 
 export default function Blog() {
   useEffect(() => {
-    document.title = "IT Blog & Insights - YugAntar Technologies";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Latest insights on web development, mobile apps, AI, and IT trends from YugAntar Technologies."
-      );
-    }
     window.scrollTo(0, 0);
   }, []);
 

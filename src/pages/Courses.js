@@ -13,11 +13,7 @@ export default function Courses() {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.12 });
 
   useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
-  useEffect(() => {
-    document.title = "IT Courses Ahmedabad - YugAntar Technologies";
+    window.scrollTo(0, 0);
   }, []);
 
   const courses = [

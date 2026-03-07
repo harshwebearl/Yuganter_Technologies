@@ -14,7 +14,6 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    document.title = "Contact | YugAntar Technologies";
     window.scrollTo(0, 0);
   }, []);
 

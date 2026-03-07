@@ -10,9 +10,6 @@ export default function Internship() {
   const [selectedInternship, setSelectedInternship] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    document.title = "Internship Programs - YugAntar Technologies";
-  }, []);
 
   const internshipPrograms = [
     {

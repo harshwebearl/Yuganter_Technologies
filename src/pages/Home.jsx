@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
@@ -12,14 +12,6 @@ import Footer from '../components/Footer';
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
-
-  useEffect(() => {
-    document.title = 'YugAntar Technologies Ahmedabad - Best IT Company for Web & Software Development';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'YugAntar Technologies Ahmedabad - Leading IT company offering web development, mobile app development, software solutions, and digital marketing services in Navrangpura. Affordable custom software development for businesses.');
-    }
-  }, []);
 
   const handleQuickEnroll = () => {
     // Default course for quick enrollment

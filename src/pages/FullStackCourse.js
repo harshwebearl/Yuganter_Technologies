@@ -17,11 +17,6 @@ import {
 export default function FullStackCourse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    document.title =
-      "Full Stack Development Course Ahmedabad - YugAntar Technologies";
-  }, []);
-
   const course = {
     title: "Full Stack Development (MERN)",
     description:
