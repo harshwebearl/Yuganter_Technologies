@@ -95,7 +95,7 @@ export default function Blog() {
               <div className="flex flex-wrap justify-center lg:justify-start gap-4">
                 <Link
                   to="/contact"
-                  className="px-8 py-4 bg-white text-dark-900 font-bold rounded-2xl hover:bg-secondary-400 hover:text-white transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-secondary-500 to-primary-500 px-5 py-2 rounded-xl font-bold text-white shadow-xl shadow-secondary-500/20"
                 >
                   Get IT Consultation
                 </Link>
@@ -180,7 +180,7 @@ export default function Blog() {
             </p>
             <Link
               to="/contact"
-              className="relative z-10 inline-block px-10 py-4 bg-gradient-to-r from-secondary-500 to-primary-500 rounded-2xl font-bold text-white shadow-xl shadow-secondary-500/20 hover:shadow-secondary-500/40 hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-secondary-500 to-primary-500 px-5 py-2 rounded-xl font-bold text-white shadow-xl shadow-secondary-500/20"
             >
               Start Your Project Now
             </Link>

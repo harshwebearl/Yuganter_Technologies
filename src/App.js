@@ -25,7 +25,7 @@ import AdminServiceInquiries from './admin/AdminServiceInquiries';
 import Attendance from './pages/Attendance';
 import AdminAttendance from './admin/AdminAttendance';
 import AdminStudents from './admin/AdminStudents';
-import FloatingEnrollButton from './components/FloatingEnrollButton';
+// import FloatingEnrollButton from './components/FloatingEnrollButton';
 import StudentRegistration from './components/StudentRegistration';
 import ScrollToTop from './components/ScrollTop';
 
@@ -62,7 +62,7 @@ function App() {
           <Route path="/admin/students" element={<AdminStudents />} />
           <Route path="/registration" element={<StudentRegistration />} />
         </Routes>
-        <FloatingEnrollButton />
+        {/* <FloatingEnrollButton /> */}
       </div>
     </Router>
   );

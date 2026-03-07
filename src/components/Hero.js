@@ -1,194 +1,214 @@
-import React, { useState, useEffect } from "react";
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import { Code, PenTool, BarChart3 } from "lucide-react";
+
+// export default function HeroSection() {
+//   return (
+//     <section
+//       className="relative min-h-[100vh] flex items-center bg-cover bg-center"
+//       style={{
+//         backgroundImage:
+//         "url('')"
+//       }}
+//     >
+//       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-transparent"></div>
+
+//       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+//         <div className="max-w-2xl text-white">
+//           <p className="text-indigo-400 font-semibold tracking-widest uppercase mb-3">
+//             Welcome To
+//           </p>
+
+//         <h1 className="text-5xl md:text-3xl font-bold bg-gradient-to-r from-secondary-400 to-primary-400 bg-clip-text text-transparent transition-all duration-300 group-hover:from-secondary-300 group-hover:to-primary-300">
+//   YugAntar Technologies
+// </h1>
+// <br/>
+
+//           <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8">
+//             YugAntar Technologies is a leading IT training and development
+//             institute focused on empowering students with modern technical
+//             skills. We provide industry-oriented courses, hands-on projects,
+//             and expert mentorship to help you build a successful career in
+//             the technology world.
+//           </p>
+
+//           <div className="flex flex-wrap gap-4">
+//             <Link
+//               to="/courses"
+//               className="bg-gradient-to-r from-secondary-500 to-primary-500 px-6 py-3 rounded-xl font-semibold text-white shadow-lg hover:scale-105 transition"
+//             >
+//               Explore Courses
+//             </Link>
+
+//             <Link
+//               to="/about"
+//               className="border border-white/40 px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
+//             >
+//               Learn More
+//             </Link>
+//           </div>
+//         </div>
+
+//         {/* Course Boxes */}
+//        <div className="grid md:grid-cols-3 gap-10 mt-16">
+          
+//   {/* MERN Stack */}
+//   <div className="bg-white/95 backdrop-blur-md rounded-xl p-6 flex items-center gap-4 shadow-lg border-l-4 border-indigo-500 hover:scale-105 transition">
+//     <div className="bg-indigo-100 p-3 rounded-lg">
+//       <Code className="text-indigo-600" size={32} />
+//     </div>
+//     <div>
+//       <h3 className="font-semibold text-gray-700">
+//         Become A Developer In
+//       </h3>
+//       <p className="text-indigo-500 font-bold">
+//         MERN Stack Development
+//       </p>
+//     </div>
+//   </div>
+
+//   {/* UI UX */}
+//   <div className="bg-white/95 backdrop-blur-md rounded-xl p-6 flex items-center gap-4 shadow-lg border-l-4 border-secondary-500 hover:scale-105 transition">
+//     <div className="bg-secondary-100 p-3 rounded-lg">
+//       <PenTool className="text-secondary-600" size={32} />
+//     </div>
+//     <div>
+//       <h3 className="font-semibold text-gray-700">
+//         Learn Professional
+//       </h3>
+//       <p className="text-secondary-500 font-bold">
+//         UI / UX Designing
+//       </p>
+//     </div>
+//   </div>
+
+//   {/* Digital Marketing */}
+//   <div className="bg-white/95 backdrop-blur-md rounded-xl p-6 flex items-center gap-4 shadow-lg border-l-4 border-primary-500 hover:scale-105 transition">
+//     <div className="bg-primary-100 p-3 rounded-lg">
+//       <BarChart3 className="text-primary-600" size={32} />
+//     </div>
+//     <div>
+//       <h3 className="font-semibold text-gray-700">
+//         Start Your Career In
+//       </h3>
+//       <p className="text-primary-500 font-bold">
+//         Digital Marketing
+//       </p>
+//     </div>
+//   </div>
+
+// </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+
+import React from "react";
 import { Link } from "react-router-dom";
+import { Code, PenTool, BarChart3 } from "lucide-react";
 
-export default function HeroSlider() {
-
-  const slides = [
-    {
-      title: "MERN Stack Development",
-      subtitle: "Become a Full-Stack JavaScript Developer",
-      desc: "Learn MongoDB, Express.js, React.js and Node.js with real-world projects and industry mentors.",
-      points: [
-        "15+ Real World Projects",
-        "MongoDB + Express + React + Node",
-        "API Development & Deployment",
-        "100% Placement Assistance"
-      ],
-      duration: "3 Months Program",
-      img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
-      color: "from-emerald-400 to-green-600"
-    },
-    {
-      title: "UI / UX Design",
-      subtitle: "Design Modern Apps & Websites",
-      desc: "Master user interface design, wireframing, prototyping and design systems using Figma.",
-      points: [
-        "Figma & Design Systems",
-        "Mobile & Web UI Design",
-        "Wireframing & Prototyping",
-        "Portfolio Projects"
-      ],
-      duration: "3 Months Program",
-      img: "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop",
-      color: "from-purple-400 to-pink-500"
-    },
-    {
-      title: "Digital Marketing",
-      subtitle: "Grow Brands & Businesses Online",
-      desc: "Learn SEO, Google Ads, Social Media Marketing and content strategies used by top brands.",
-      points: [
-        "SEO & Google Ranking",
-        "Meta & Instagram Ads",
-        "Content Marketing Strategy",
-        "Live Campaign Practice"
-      ],
-      duration: "3 Months Program",
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-      color: "from-orange-400 to-red-500"
-    }
-  ];
-
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
+export default function HeroSection() {
   return (
-    // <section className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white overflow-hidden">
-    <section className="relative py-24 bg-gray-900 text-white min-h-screen overflow-hidden">
+    <section
+      className="relative min-h-screen flex items-center bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c')",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/70"></div>
 
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/circuit.png')] opacity-10"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
+        <div className="max-w-3xl text-white">
+          <p className="text-secondary-400 font-semibold tracking-widest uppercase mb-3">
+            Welcome To
+          </p>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-
-        <div className="grid md:grid-cols-2 items-center gap-14 min-h-[520px]">
-
-          {/* LEFT CONTENT */}
-          <div className="space-y-6">
-
-            <span className="px-4 py-2 bg-white/10 border border-white/20 rounded-full text-sm">
-              🚀 Professional Career Course
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+            Build Your Tech Career With{" "}
+            <span className="bg-gradient-to-r from-secondary-400 to-primary-400 bg-clip-text text-transparent">
+              YugAntar Technologies
             </span>
+          </h1>
 
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              {slides[current].title}
-            </h1>
+          <p className="text-gray-300 text-lg leading-relaxed mb-8">
+            YugAntar Technologies is a modern IT training institute focused on
+            building real-world skills through practical learning, live
+            projects, and expert mentorship.
+          </p>
 
-            <h3 className="text-lg text-indigo-400 font-medium">
-              {slides[current].subtitle}
-            </h3>
-
-            <p className="text-gray-300 text-lg max-w-xl">
-              {slides[current].desc}
-            </p>
-
-            {/* Course Points */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {slides[current].points.map((point, i) => (
-                <li key={i} className="flex items-center gap-2 text-gray-200">
-                  <span className="text-green-400 font-bold">✔</span>
-                  {point}
-                </li>
-              ))}
-            </ul>
-
-            {/* Course Duration */}
-            <div className="text-sm text-yellow-400 font-semibold">
-              📅 {slides[current].duration}
-            </div>
-
-            {/* Buttons */}
-            <div className="flex gap-4 pt-4">
+          <div className="flex flex-wrap gap-4">
+            <Link
+              to="/courses"
+              className="bg-gradient-to-r from-secondary-500 to-primary-500 px-7 py-3 rounded-xl font-semibold text-white shadow-lg hover:scale-105 transition"
+            >
+              Explore Courses
+            </Link>
 
             <Link
-  to="/courses"
-  className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
->
-  <span className="relative z-10">View Course</span>
+              to="/about"
+              className="border border-white/40 px-7 py-3 rounded-xl font-semibold hover:bg-white hover:text-black transition"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
 
-  {/* Arrow Icon */}
-  <span className="relative z-10 text-lg transition-transform duration-300 group-hover:translate-x-1">
-    →
-  </span>
+        {/* Course Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mt-16">
 
-  {/* Glow Effect */}
-  <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-20 transition"></span>
-</Link>
-
-              <Link
-                to="/contact"
-                className="px-6 py-3 border border-white/40 rounded-lg hover:bg-white/10 transition"
-              >
-                Book Free Demo
-              </Link>
-
+          {/* MERN */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition">
+            <div className="bg-indigo-500/20 p-3 rounded-lg">
+              <Code className="text-indigo-400" size={30} />
             </div>
 
+            <div>
+              <h3 className="text-gray-200 text-sm">
+                Become a Developer in
+              </h3>
+              <p className="text-white font-semibold text-lg">
+                MERN Stack Development
+              </p>
+            </div>
           </div>
 
-          {/* RIGHT IMAGE */}
-<div className="flex justify-center">
+          {/* UI UX */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition">
+            <div className="bg-pink-500/20 p-3 rounded-lg">
+              <PenTool className="text-pink-400" size={30} />
+            </div>
 
-  <div className="relative w-full max-w-md">
+            <div>
+              <h3 className="text-gray-200 text-sm">
+                Learn Professional
+              </h3>
+              <p className="text-white font-semibold text-lg">
+                UI / UX Designing
+              </p>
+            </div>
+          </div>
 
-    {/* Image without shadow or glow */}
-    <img
-      src={slides[current].img}
-      alt="course"
-      className="rounded-2xl w-full h-[360px] object-cover"
-    />
+          {/* Digital Marketing */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 flex items-center gap-4 hover:scale-105 transition">
+            <div className="bg-green-500/20 p-3 rounded-lg">
+              <BarChart3 className="text-green-400" size={30} />
+            </div>
 
-  </div>
-
-</div>
-
-        </div>
-
-      {/* ARROWS */}
-<button
-  onClick={prevSlide}
-  className="absolute -left-6 md:-left-10 top-1/2 -translate-y-1/2 bg-white/10 border border-white/20 p-3 rounded-full hover:bg-white/20 transition z-20"
->
-  ❮
-</button>
-
-<button
-  onClick={nextSlide}
-  className="absolute -right-6 md:-right-10 top-1/2 -translate-y-1/2 bg-white/10 border border-white/20 p-3 rounded-full hover:bg-white/20 transition z-20"
->
-  ❯
-</button>
-
-        {/* INDICATORS */}
-        <div className="flex justify-center mt-12 gap-3">
-
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`h-3 rounded-full transition-all duration-300 ${
-                current === index
-                  ? "bg-white w-8"
-                  : "bg-gray-500 w-3"
-              }`}
-            />
-          ))}
+            <div>
+              <h3 className="text-gray-200 text-sm">
+                Start Your Career In
+              </h3>
+              <p className="text-white font-semibold text-lg">
+                Digital Marketing
+              </p>
+            </div>
+          </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }

@@ -36,6 +36,36 @@ export default function Courses() {
       "Deployment"
     ]
   },
+   {
+    title: "UI/UX Design",
+    description: "Learn design principles and tools like Figma to create amazing user interfaces.",
+    imageUrl: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&auto=format&fit=crop",
+    duration: "4 Months",
+    popular: true,
+    features: [
+      "Design Principles",
+      "Figma",
+      "Wireframing",
+      "Prototyping",
+      "User Research",
+      "Portfolio"
+    ]
+  },
+  {
+  title: "Digital Marketing",
+  description: "Learn SEO, social media marketing, Google Ads, and strategies to grow businesses online.",
+  imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop",
+  duration: "3 Months",
+  popular: true,
+  features: [
+    "Search Engine Optimization (SEO)",
+    "Social Media Marketing",
+    "Google Ads & PPC",
+    "Content Marketing",
+    "Email Marketing",
+    "Analytics & Reporting"
+  ]
+},
   {
   title: "Python Development",
   description: "Learn Python programming and Django framework to build scalable web apps.",
@@ -66,21 +96,7 @@ export default function Courses() {
       "Enterprise Applications"
     ]
   },
-  {
-    title: "UI/UX Design",
-    description: "Learn design principles and tools like Figma to create amazing user interfaces.",
-    imageUrl: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&auto=format&fit=crop",
-    duration: "4 Months",
-    popular: false,
-    features: [
-      "Design Principles",
-      "Figma",
-      "Wireframing",
-      "Prototyping",
-      "User Research",
-      "Portfolio"
-    ]
-  },
+ 
   {
     title: "Data Science & AI/ML",
     description: "Learn data analysis, machine learning and AI with Python.",
@@ -96,115 +112,7 @@ export default function Courses() {
       "Projects"
     ]
   },
-  {
-    title: "Mobile App Development",
-    description: "Build mobile apps using React Native and Flutter.",
-    imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&auto=format&fit=crop",
-    duration: "5 Months",
-    popular: false,
-    features: [
-      "React Native",
-      "Flutter",
-      "API Integration",
-      "State Management",
-      "App Architecture",
-      "Deployment"
-    ]
-  }
 ];
-
-  // const courses = [
-  //   {
-  //     title: "Full Stack Development (MERN)",
-  //     description: "Master MongoDB, Express, React, and Node.js to build modern web applications.",
-  //     imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=96&h=96&fit=crop&crop=center",
-  //     duration: "6 Months",
-  //     popular: true,
-  //     features: [
-  //       "React.js & Redux",
-  //       "Node.js & Express",
-  //       "MongoDB Database",
-  //       "RESTful APIs",
-  //       "Authentication",
-  //       "Deployment"
-  //     ]
-  //   },
-  //   {
-  //     title: "Python Development",
-  //     description: "Learn Python programming and Django framework to build scalable web apps.",
-  //     imageUrl: "https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=96&h=96&fit=crop&crop=center",
-  //     duration: "5 Months",
-  //     popular: false,
-  //     features: [
-  //       "Python Fundamentals",
-  //       "Django Framework",
-  //       "Database Management",
-  //       "API Development",
-  //       "Web Scraping",
-  //       "Data Analysis"
-  //     ]
-  //   },
-  //   {
-  //     title: "Java Full Stack",
-  //     description: "Comprehensive Java training with Spring Boot and enterprise technologies.",
-  //     imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=96&h=96&fit=crop&crop=center",
-  //     duration: "6 Months",
-  //     popular: false,
-  //     features: [
-  //       "Core Java",
-  //       "Spring Boot",
-  //       "Hibernate ORM",
-  //       "Microservices",
-  //       "JSP & Servlets",
-  //       "Enterprise Applications"
-  //     ]
-  //   },
-  //   {
-  //     title: "UI/UX Design",
-  //     description: "Learn design principles and tools like Figma to create amazing user interfaces.",
-  //     imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=96&h=96&fit=crop&crop=center",
-  //     duration: "4 Months",
-  //     popular: false,
-  //     features: [
-  //       "Design Principles",
-  //       "Figma",
-  //       "Wireframing",
-  //       "Prototyping",
-  //       "User Research",
-  //       "Portfolio"
-  //     ]
-  //   },
-  //   {
-  //     title: "Data Science & AI/ML",
-  //     description: "Learn data analysis, machine learning and AI with Python.",
-  //     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=96&h=96&fit=crop&crop=center",
-  //     duration: "7 Months",
-  //     popular: true,
-  //     features: [
-  //       "Python for Data Science",
-  //       "Machine Learning",
-  //       "Deep Learning",
-  //       "Data Visualization",
-  //       "NLP",
-  //       "Projects"
-  //     ]
-  //   },
-  //   {
-  //     title: "Mobile App Development",
-  //     description: "Build mobile apps using React Native and Flutter.",
-  //     imageUrl: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=96&h=96&fit=crop&crop=center",
-  //     duration: "5 Months",
-  //     popular: false,
-  //     features: [
-  //       "React Native",
-  //       "Flutter",
-  //       "API Integration",
-  //       "State Management",
-  //       "App Architecture",
-  //       "Deployment"
-  //     ]
-  //   }
-  // ];
 
   const handleEnroll = (course) => {
     setSelectedCourse(course);
@@ -238,7 +146,7 @@ export default function Courses() {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
+                className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-secondary-500 to-primary-500 px-5 py-2 rounded-xl font-bold text-white shadow-xl shadow-secondary-500/20"
               >
                 Book Free Demo Class
               </Link>
@@ -318,7 +226,7 @@ export default function Courses() {
 
           <Link
             to="/contact"
-            className="bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-3 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
+            className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-secondary-500 to-primary-500 px-5 py-2 rounded-xl font-bold text-white shadow-xl shadow-secondary-500/20"
           >
             Book Free Demo Class
           </Link>

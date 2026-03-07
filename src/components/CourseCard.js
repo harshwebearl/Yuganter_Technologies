@@ -118,8 +118,7 @@ export default function CourseCard({ course, onEnroll }) {
           {/* Enroll Button */}
           <button
             onClick={() => onEnroll && onEnroll(course)}
-            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
-            // className="w-full px-4 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold text-sm rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-indigo-500/30 flex items-center justify-center gap-2"
+            className=" w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-secondary-500 to-primary-500 px-5 py-2 rounded-xl font-bold text-white shadow-xl shadow-secondary-500/20"
           >
             <span>Enroll Now</span>
 

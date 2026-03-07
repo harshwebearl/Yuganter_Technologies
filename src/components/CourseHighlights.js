@@ -17,8 +17,8 @@ export default function CourseHighlights() {
       color: "from-indigo-500 to-purple-500",
     },
     {
-      title: "Data Science & AI/ML",
-      description: "Learn data analysis, machine learning, and AI with real datasets.",
+      title: "UI/UX Design",
+      description: "Learn to design user-friendly and visually appealing websites and apps using modern UI/UX principles and tools.",
       icon: <CpuChipIcon className="w-8 h-8" />,
       duration: "7 Months",
       popular: true,
@@ -26,11 +26,11 @@ export default function CourseHighlights() {
       color: "from-green-400 to-emerald-500",
     },
     {
-      title: "Python Development",
-      description: "Build scalable applications and automation scripts with Python & Django.",
+      title: "Digital Marketing",
+      description: "Learn SEO, social media marketing, and online advertising to grow businesses digitally.",
       icon: <ComputerDesktopIcon className="w-8 h-8" />,
       duration: "5 Months",
-      popular: false,
+      popular: true,
       link: "/courses/python-development",
       color: "from-yellow-400 to-orange-500",
     },
@@ -58,7 +58,7 @@ export default function CourseHighlights() {
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Start Your <span className="text-indigo-400">Professional Journey</span>
-          </h2>
+          </h2> 
 
           <p className="mt-5 max-w-2xl mx-auto text-gray-300 text-base md:text-lg leading-relaxed">
             Choose from our career-focused programs designed to make you industry-ready
@@ -141,9 +141,9 @@ export default function CourseHighlights() {
           }`}
         >
           <Link
-            to="/courses"
-  className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-500 to-primary-500 hover:from-secondary-600 hover:to-primary-600 px-5 py-2 rounded-xl font-semibold text-sm md:text-base text-white transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-secondary-500/50 inline-block"
-            >
+  to="/courses"
+  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-secondary-500 to-primary-500 px-5 py-2 rounded-xl font-bold text-white shadow-xl shadow-secondary-500/20"
+>
             View All Courses
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

@@ -69,8 +69,8 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {[
             { t: "Drop by Office", c: "2nd floor, Yash Aqua, 204, Vijay Cross Rd, University Area, Ahmedabad, Gujarat 380009", i: "📍", b: "border-blue-500/20" },
-            { t: "Call Directly", c: "+91 90543 72690", i: "📞", b: "border-purple-500/20" },
-            { t: "Work with Us", c: "support@yugantar.tech", i: "✉️", b: "border-emerald-500/20" }
+            { t: "Call Directly", c: "+91 6355582605", i: "📞", b: "border-purple-500/20" },
+            { t: "Work with Us", c: "info@yugantartechnologies.com", i: "✉️", b: "border-emerald-500/20" }
           ].map((item, i) => (
             <div key={i} className={`p-8 bg-white/5 border ${item.b} rounded-[2rem] backdrop-blur-sm hover:bg-white/10 transition-all duration-500 group`}>
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.i}</div>
