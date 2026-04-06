@@ -9,11 +9,15 @@ import { CodeBracketIcon, CpuChipIcon, ChartBarIcon, GlobeAltIcon, CheckCircleIc
 export default function PythonCourse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    document.title = 'Python Development Course Ahmedabad - YugAntar Technologies';
+  }, []);
+
   const course = {
     title: "Python Development",
     description: "Learn Python programming, Django framework, and build scalable web applications.",
     icon: <CodeBracketIcon className="w-16 h-16 text-indigo-500" />,
-    duration: "5 Months",
+    duration: "3 Months",
     features: [
       "Python Fundamentals",
       "Django Framework",
@@ -48,7 +52,7 @@ export default function PythonCourse() {
       { title: "Web Scraper", description: "Extract data from websites using Python tools.", icon: <CpuChipIcon className="w-8 h-8 text-orange-500" /> },
     ],
     stats: [
-      { label: "Duration", value: "5 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-400" /> },
+      { label: "Duration", value: "3 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-400" /> },
       { label: "Mode", value: "Online / Offline", icon: <ComputerDesktopIcon className="w-6 h-6 text-green-400" /> },
       { label: "Students Enrolled", value: "450+", icon: <UserGroupIcon className="w-6 h-6 text-purple-400" /> },
     ]

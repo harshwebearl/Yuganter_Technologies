@@ -22,7 +22,7 @@ export default function UiUxCourse() {
     description:
       "Master design principles, tools like Figma, and create stunning user interfaces.",
     icon: <PencilIcon className="w-16 h-16 text-indigo-500" />,
-    duration: "4 Months",
+    duration: "3 Months",
     features: [
       "Design Principles",
       "Figma & Adobe XD",
@@ -74,7 +74,7 @@ export default function UiUxCourse() {
       }
     ],
     stats: [
-      { label: "Duration", value: "4 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-500" /> },
+      { label: "Duration", value: "3 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-500" /> },
       { label: "Mode", value: "Online/Offline", icon: <ComputerDesktopIcon className="w-6 h-6 text-green-500" /> },
       { label: "Students Enrolled", value: "250+", icon: <UserGroupIcon className="w-6 h-6 text-purple-500" /> }
     ]

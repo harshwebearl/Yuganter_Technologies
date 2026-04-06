@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import { CodeBracketIcon, CpuChipIcon, ComputerDesktopIcon } from "@heroicons/react/24/solid";
+import { CodeBracketIcon, PencilIcon, ChartBarIcon } from "@heroicons/react/24/solid";
 
 export default function CourseHighlights() {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.12 });
@@ -11,7 +11,7 @@ export default function CourseHighlights() {
       title: "Full Stack Development (MERN)",
       description: "Master MongoDB, Express, React, and Node.js with hands-on projects.",
       icon: <CodeBracketIcon className="w-8 h-8" />,
-      duration: "6 Months",
+      duration: "3 Months",
       popular: true,
       link: "/courses/full-stack-mern",
       color: "from-indigo-500 to-purple-500",
@@ -19,19 +19,19 @@ export default function CourseHighlights() {
     {
       title: "UI/UX Design",
       description: "Learn to design user-friendly and visually appealing websites and apps using modern UI/UX principles and tools.",
-      icon: <CpuChipIcon className="w-8 h-8" />,
-      duration: "7 Months",
+      icon: <PencilIcon className="w-8 h-8" />,
+      duration: "3 Months",
       popular: true,
-      link: "/courses/data-science-ai-ml",
+      link: "/courses/ui-ux-design",
       color: "from-green-400 to-emerald-500",
     },
     {
       title: "Digital Marketing",
       description: "Learn SEO, social media marketing, and online advertising to grow businesses digitally.",
-      icon: <ComputerDesktopIcon className="w-8 h-8" />,
-      duration: "5 Months",
+      icon: <ChartBarIcon className="w-8 h-8" />,
+      duration: "3 Months",
       popular: true,
-      link: "/courses/python-development",
+      link: "/courses/digital-marketing",
       color: "from-yellow-400 to-orange-500",
     },
   ];
@@ -58,7 +58,7 @@ export default function CourseHighlights() {
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
             Start Your <span className="text-indigo-400">Professional Journey</span>
-          </h2> 
+          </h2>  
 
           <p className="mt-5 max-w-2xl mx-auto text-gray-300 text-base md:text-lg leading-relaxed">
             Choose from our career-focused programs designed to make you industry-ready

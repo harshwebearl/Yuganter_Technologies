@@ -17,12 +17,17 @@ import {
 export default function FullStackCourse() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    document.title =
+      "Full Stack Development Course Ahmedabad - YugAntar Technologies";
+  }, []);
+
   const course = {
     title: "Full Stack Development (MERN)",
     description:
       "Master MongoDB, Express, React, and Node.js to build modern web applications from scratch.",
     icon: <CodeBracketIcon className="w-16 h-16 text-indigo-500" />,
-    duration: "6 Months",
+    duration: "3 Months",
     features: [
       "React.js & Redux",
       "Node.js & Express",
@@ -80,7 +85,7 @@ export default function FullStackCourse() {
     stats: [
       {
         label: "Duration",
-        value: "6 Months",
+        value: "3 Months",
         icon: <ClockIcon className="w-6 h-6 text-indigo-400" />,
       },
       {

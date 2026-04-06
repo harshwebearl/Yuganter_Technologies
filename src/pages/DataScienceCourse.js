@@ -23,7 +23,7 @@ export default function DataScienceCourse() {
     description:
       "Learn data analysis, machine learning, and artificial intelligence with Python.",
     icon: <ChartBarIcon className="w-16 h-16 text-indigo-500" />,
-    duration: "7 Months",
+    duration: "3 Months",
     popular: true,
     features: [
       "Python for Data Science",
@@ -60,7 +60,7 @@ export default function DataScienceCourse() {
       { title: "Data Analyst", description: "Interpret data and create reports for decision making.", icon: <PresentationChartLineIcon className="w-8 h-8 text-orange-500" /> },
     ],
     stats: [
-      { label: "Duration", value: "7 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-500" /> },
+      { label: "Duration", value: "3 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-500" /> },
       { label: "Mode", value: "Online/Offline", icon: <ComputerDesktopIcon className="w-6 h-6 text-green-500" /> },
       { label: "Students Enrolled", value: "400+", icon: <UserGroupIcon className="w-6 h-6 text-purple-500" /> },
     ]

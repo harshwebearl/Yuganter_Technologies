@@ -13,7 +13,11 @@ export default function Courses() {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.12 });
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+  window.scrollTo(0, 0);
+}, []);
+
+  useEffect(() => {
+    document.title = "IT Courses Ahmedabad - YugAntar Technologies";
   }, []);
 
   const courses = [
@@ -21,7 +25,7 @@ export default function Courses() {
     title: "Full Stack Development (MERN)",
     description: "Master MongoDB, Express, React, and Node.js to build modern web applications.",
     imageUrl: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=600&auto=format&fit=crop",
-    duration: "6 Months",
+    duration: "3 Months",
     popular: true,
     features: [
       "React.js & Redux",
@@ -36,7 +40,7 @@ export default function Courses() {
     title: "UI/UX Design",
     description: "Learn design principles and tools like Figma to create amazing user interfaces.",
     imageUrl: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&auto=format&fit=crop",
-    duration: "4 Months",
+    duration: "3 Months",
     popular: true,
     features: [
       "Design Principles",
@@ -66,7 +70,7 @@ export default function Courses() {
   title: "Python Development",
   description: "Learn Python programming and Django framework to build scalable web apps.",
   imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&auto=format&fit=crop",
-  duration: "5 Months",
+  duration: "3 Months",
   popular: false,
   features: [
     "Python Fundamentals",
@@ -81,7 +85,7 @@ export default function Courses() {
     title: "Java Full Stack",
     description: "Comprehensive Java training with Spring Boot and enterprise technologies.",
     imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop",
-    duration: "6 Months",
+    duration: "3 Months",
     popular: false,
     features: [
       "Core Java",
@@ -97,7 +101,7 @@ export default function Courses() {
     title: "Data Science & AI/ML",
     description: "Learn data analysis, machine learning and AI with Python.",
     imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&auto=format&fit=crop",
-    duration: "7 Months",
+    duration: "3 Months",
     popular: true,
     features: [
       "Python for Data Science",
@@ -174,7 +178,7 @@ export default function Courses() {
         <div className="text-center mb-12">
 
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
-            Explore Our Courses
+            Explore Our Courses 
           </h2>
 
           <p className="text-gray-400 max-w-2xl mx-auto">

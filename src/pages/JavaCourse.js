@@ -13,7 +13,7 @@ export default function JavaCourse() {
     title: "Java Full Stack",
     description: "Comprehensive Java training with Spring Boot, Hibernate, and modern Java technologies.",
     icon: <CodeBracketIcon className="w-16 h-16 text-indigo-500" />,
-    duration: "6 Months",
+    duration: "3 Months",
     popular: false,
     features: [
       "Core Java & Advanced Java",
@@ -50,7 +50,7 @@ export default function JavaCourse() {
       { title: "Enterprise Architect", description: "Design and implement enterprise-level solutions.", icon: <BuildingOfficeIcon className="w-8 h-8 text-orange-500" /> },
     ],
     stats: [
-      { label: "Duration", value: "6 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-400" /> },
+      { label: "Duration", value: "3 Months", icon: <ClockIcon className="w-6 h-6 text-indigo-400" /> },
       { label: "Mode", value: "Online/Offline", icon: <ComputerDesktopIcon className="w-6 h-6 text-green-400" /> },
       { label: "Students Enrolled", value: "350+", icon: <UserGroupIcon className="w-6 h-6 text-purple-400" /> },
     ]

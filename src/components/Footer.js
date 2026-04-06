@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-dark-900 via-dark-800 to-dark-950 text-white relative overflow-hidden">
-      
+
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/circuit.png')] opacity-5"></div>
 
@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center mb-6">
               <img src={logo} alt="YugAntar Technologies" className="w-16 h-16 mr-4 rounded-full object-contain" />
-              
+
               <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-secondary-400 to-primary-400 bg-clip-text text-transparent transition-all duration-300 group-hover:from-secondary-300 group-hover:to-primary-300">
                 YugAntar Technologies <br />
                 <span className="text-sm md:text-base font-medium">
@@ -35,30 +35,41 @@ export default function Footer() {
             <div className="flex gap-4">
 
               {/* Facebook */}
-              <a href="https://www.facebook.com/share/16Ao4uJg7S/" className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110">
+              <a href="https://www.facebook.com/share/16Ao4uJg7S/" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110 text-white">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                  <path d="M22 12a10 10 0 10-11.63 9.87v-6.99H7.9v-2.88h2.47V9.41c0-2.43 1.45-3.78 3.68-3.78 1.07 0 2.19.19 2.19.19v2.4h-1.23c-1.21 0-1.59.75-1.59 1.52v1.82h2.7l-.43 2.88h-2.27v6.99A10 10 0 0022 12z" />
                 </svg>
               </a>
 
-              {/* X */}
-              <a href="https://x.com/YugATechnologie" className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110 text-white">
-                <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="28" width="28">
-                  <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"></path>
+              {/* X (Twitter) */}
+              <a href="https://x.com/YugATechnologie" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110 text-white">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2H21l-6.56 7.5L22 22h-6.828l-5.34-6.99L3.5 22H1l7.03-8.03L2 2h6.828l4.84 6.35L18.244 2z" />
                 </svg>
               </a>
 
               {/* Instagram */}
-              <a href="https://www.instagram.com/yugantar_technologies?igsh=Z2Q5cXMxaXg2dm93" className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110">
+              <a href="https://www.instagram.com/yugantar_technologies?igsh=Z2Q5cXMxaXg2dm93" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110 text-white">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947z" />
+                  <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 
+      0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm5 
+      5a5 5 0 110 10 5 5 0 010-10zm6.5-.25a1.25 
+      1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 
+      9a3 3 0 100 6 3 3 0 000-6z"/>
                 </svg>
               </a>
 
               {/* LinkedIn */}
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110">
+              <a href="#" target="_blank" rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-secondary-500 flex items-center justify-center transition-all duration-300 hover:scale-110 text-white">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zM7.119 20.452H3.555V9h3.564v11.452z" />
+                  <path d="M6.94 6.5a1.94 1.94 0 11-3.88 0 1.94 1.94 0 013.88 
+      0zM3.5 8.75h3v9.75h-3V8.75zM9 8.75h2.88v1.33h.04c.4-.76 
+      1.37-1.56 2.82-1.56 3.02 0 3.58 1.99 3.58 4.58v5.4h-3v-4.79c0-1.14-.02-2.6-1.58-2.6-1.58 
+      0-1.82 1.23-1.82 2.52v4.87H9V8.75z"/>
                 </svg>
               </a>
 
@@ -87,8 +98,8 @@ export default function Footer() {
               {/* Address */}
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-secondary-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span>204, 2nd Floor, Yash Aqua, Vijay Cross Road, Navrangpura, Ahmedabad - 380009</span>
               </li>
@@ -96,8 +107,8 @@ export default function Footer() {
               {/* Email */}
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-secondary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"/>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <a href="mailto:info@yugantartechnologies.com" className="hover:text-secondary-400 transition-colors">
                   info@yugantartechnologies.com
@@ -107,7 +118,7 @@ export default function Footer() {
               {/* Phone */}
               <li className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-secondary-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
 
                 <div className="flex flex-col">

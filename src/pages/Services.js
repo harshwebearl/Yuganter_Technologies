@@ -9,6 +9,16 @@ export default function Services() {
   const [bookingModal, setBookingModal] = useState({ isOpen: false, service: null });
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.12 });
 
+  useEffect(() => {
+    document.title = "IT Services Ahmedabad - YugAntar Technologies";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute(
+        'content',
+        'Best IT services in Ahmedabad - Web, Mobile, Game, E-Commerce, CRM, ERP, API & Field Force solutions.'
+      );
+    }
+  }, []);
 
   const handleBookService = (service) => setBookingModal({ isOpen: true, service });
   const handleCloseBookingModal = () => setBookingModal({ isOpen: false, service: null });

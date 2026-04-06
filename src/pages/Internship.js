@@ -10,46 +10,49 @@ export default function Internship() {
   const [selectedInternship, setSelectedInternship] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    document.title = "Internship Programs - YugAntar Technologies";
+  }, []);
 
   const internshipPrograms = [
     {
       title: "Web Development Internship",
-      duration: "3–6 Months",
+      duration: "3 Months",
       skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
       description:
         "Build modern websites and web applications while working on real projects with our development team.",
     },
     {
       title: "Python Development Internship",
-      duration: "3–6 Months",
+      duration: "3 Months",
       skills: ["Python", "Flask", "Django", "APIs", "Databases"],
       description:
         "Learn backend development and build scalable applications using modern Python frameworks.",
     },
     {
       title: "Mobile App Development Internship",
-      duration: "3–6 Months",
+      duration: "3 Months",
       skills: ["Flutter", "React Native", "Firebase"],
       description:
         "Create cross-platform mobile applications and understand the full mobile development lifecycle.",
     },
     {
       title: "UI / UX Design Internship",
-      duration: "2–4 Months",
+      duration: "3 Months",
       skills: ["Figma", "Wireframing", "Prototyping"],
       description:
         "Design modern user interfaces and learn how to create intuitive digital experiences.",
     },
     {
       title: "Data Science Internship",
-      duration: "4–6 Months",
+      duration: "3 Months",
       skills: ["Python", "ML", "Data Analysis", "Visualization"],
       description:
         "Work with real datasets and learn machine learning, data analysis, and visualization techniques.",
     },
     {
       title: "Java Development Internship",
-      duration: "3–6 Months",
+      duration: "3 Months",
       skills: ["Java", "Spring Boot", "REST APIs"],
       description:
         "Develop enterprise-grade applications using modern Java frameworks and backend architecture.",
@@ -130,7 +133,7 @@ export default function Internship() {
         </div>
 
       </section>
-
+ 
       {/* Programs */}
 
       <section id="programs" className="py-16">
